@@ -23,7 +23,7 @@ export default function Schedule() {
             {/* If NALCSSchedule is not empty, map it */}
             {NALCSSchedule && NALCSSchedule.map(game => {
                 return (
-                    <Card Aname={game.TeamAName} Bname={game.TeamBName} Ascore={game.TeamAScore} Bscore={game.TeamBScore} date={game.DateTime} />
+                    <Card Aname={game.TeamAName} Bname={game.TeamBName} Ascore={game.TeamAScore} Bscore={game.TeamBScore} date={game.DateTime} key={game.GameId} />
                 )
             })}
         </div>

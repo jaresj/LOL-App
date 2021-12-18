@@ -1,4 +1,5 @@
 import Schedule from './components/Schedule';
+import "./styles/index.css";
 
 function App() {
   return (
