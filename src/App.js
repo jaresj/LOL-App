@@ -1,5 +1,5 @@
-import Schedule from './components/Schedule';
-import "./styles/index.css";
+import Schedule from './components/schedule';
+import "./styles/index.scss";
 
 function App() {
   return (

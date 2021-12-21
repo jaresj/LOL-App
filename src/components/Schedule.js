@@ -1,6 +1,6 @@
 import React from 'react'
 import {useEffect, useState} from 'react';
-import Card from './Card';
+import Card from './card';
 
 export default function Schedule() {
     const [NALCSSchedule, setNALCSSchedule] = useState([]);
