@@ -5,16 +5,19 @@ import Card from './card';
 export default function Schedule() {
     const [NALCSSchedule, setNALCSSchedule] = useState([]);
     const getNALCSSchedule = async function () {
-        const response = await fetch('https://api.sportsdata.io/v3/lol/scores/json/Schedule/100001332?key=373398970de647feb305dd85eb4dde6d')
+        await fetch('https://api.sportsdata.io/v3/lol/scores/json/Schedule/100001332?key=373398970de647feb305dd85eb4dde6d')
                 // make the response a json object
             .then(response => response.json())
                 //set object as NALCSSchedule variable
-            .then(data => setNALCSSchedule(data))
+            .then(data => {
+                setNALCSSchedule(data);
+                console.log(data)
+            })
     }
 
     // When component renders, run getNALCSSchedule() and then console.log NALCSSchedule
     useEffect(() => {
-        getNALCSSchedule().then(data => console.log(NALCSSchedule))
+        getNALCSSchedule()
     }, []);
 
     return (
