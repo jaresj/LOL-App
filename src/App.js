@@ -11,10 +11,10 @@ function App() {
     <Router>
       <NavBar />
       <Routes>
-        <Route exact path="/" component={<LCS />} />
-        <Route path="/lec" component={<LEC />} />
-        <Route path="/lck" component={<LCK />} />
-        <Route path="/lpl" component={<LPL />} />
+        <Route exact path="/" element={<LCS />} />
+        <Route path="/lec" element={<LEC />} />
+        <Route path="/lck" element={<LCK />} />
+        <Route path="/lpl" element={<LPL />} />
       </Routes>
     </Router>
   );
