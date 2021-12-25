@@ -2,32 +2,32 @@ import React from "react";
 import { useEffect, useState } from "react";
 import Card from "./Card";
 
-export default function Schedule() {
-  const [NALCSSchedule, setNALCSSchedule] = useState([]);
-  const getNALCSSchedule = async function () {
+export default function Schedule({selectedRoundId}) {
+  const [Schedule, setSchedule] = useState([]);
+  const getSchedule = async function (roundId) {
     await fetch(
-      "https://api.sportsdata.io/v3/lol/scores/json/Schedule/100001332?key=373398970de647feb305dd85eb4dde6d"
+      `https://api.sportsdata.io/v3/lol/scores/json/Schedule/${roundId}?key=373398970de647feb305dd85eb4dde6d`
     )
       // make the response a json object
       .then((response) => response.json())
       //set object as NALCSSchedule variable
       .then((data) => {
-        setNALCSSchedule(data);
+        setSchedule(data);
         console.log(data);
       });
   };
 
-  // When component renders, run getNALCSSchedule() and then console.log NALCSSchedule
+  // When component renders, run getSchedule() and then console.log NALCSSchedule
   useEffect(() => {
-    getNALCSSchedule();
+    getSchedule(selectedRoundId);
   }, []);
 
   return (
     <div>
       <h1>Schedule</h1>
-      {/* If NALCSSchedule is not empty, map it */}
-      {NALCSSchedule &&
-        NALCSSchedule.map((game) => {
+      {/* If Schedule is not empty, map it */}
+      {Schedule &&
+        Schedule.map((game) => {
           return (
             <Card
               Aname={game.TeamAName}
