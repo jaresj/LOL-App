@@ -1,14 +1,13 @@
 nav {
   display: flex;
-  justify-content: flex-end;
   color: $light-blue;
+  justify-content: flex-end;
   ul {
     list-style: none;
     margin: 0;
     padding: 0;
     li {
       display: inline;
-      padding-right: 10%;
     }
   }
 }
