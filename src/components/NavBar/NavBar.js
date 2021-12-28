@@ -1,22 +1,34 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import Dropdown from './Dropdown';
 
 const NavBar = () => {
+  const scheduleLinks = [
+    {
+      title: 'LCS',
+      pageRoute: '/'
+    },
+    {
+      title: 'LCK',
+      pageRoute: '/lck'
+    },
+    {
+      title: 'LEC',
+      pageRoute: '/lec'
+    },
+    {
+      title: 'LPL',
+      pageRoute: '/lpl'
+    },
+  ]
+
   return (
-    <div>
-      <li>
-        <Link to="/">LCS</Link>
-      </li>
-      <li>
-        <Link to="/lec">LEC</Link>
-      </li>
-      <li>
-        <Link to="/lck">LCK</Link>
-      </li>
-      <li>
-        <Link to="/lpl">LPL</Link>
-      </li>
-    </div>
+    <nav>
+      <ul>
+        <li>
+          <Dropdown dropdownName='Schedule' links={scheduleLinks} />
+        </li>
+      </ul>
+    </nav>
   );
 };
 
