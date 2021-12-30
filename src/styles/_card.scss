@@ -3,15 +3,27 @@
   border: 1px solid #00c2d1;
   border-radius: 25px;
   display: inline-block;
-  margin-right: 2px;
+  margin-right: 3px;
   padding: 15px;
+  margin-top: 3px;
+  background-color: $league-blue;
 }
 
 .gameCard:hover {
-  background-color: $brown;
+  background-color: $purple;
+  border: 1px solid $purple;
+}
+
+.gameCard:hover p {
+  color: $gold;
 }
 
 .gameTeams {
+  padding: auto;
+  text-align: center;
+}
+
+.gameDate {
   padding: auto;
   text-align: center;
 }

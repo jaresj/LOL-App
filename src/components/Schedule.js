@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import Card from "./Card";
 
-export default function Schedule({selectedRoundId}) {
+export default function Schedule({ selectedRoundId }) {
   const [Schedule, setSchedule] = useState([]);
   const getSchedule = async function (roundId) {
     await fetch(

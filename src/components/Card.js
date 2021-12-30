@@ -1,4 +1,5 @@
 import React from "react";
+import { format } from "date-fns";
 
 export default function Card({ Aname, Bname, date, Ascore, Bscore }) {
   return (
@@ -9,7 +10,9 @@ export default function Card({ Aname, Bname, date, Ascore, Bscore }) {
         <p>{Bname}</p>
         <p>{Bscore}</p>
       </div>
-      <p>{date}</p>
+      <div className="gameDate">
+        <p>{format(new Date(date), "do MMMM Y")}</p>
+      </div>
     </div>
   );
 }
