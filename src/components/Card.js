@@ -11,7 +11,7 @@ export default function Card({ Aname, Bname, date, Ascore, Bscore }) {
         <p>{Bscore}</p>
       </div>
       <div className="gameDate">
-        <p>{format(new Date(date), "do MMMM Y")}</p>
+        <p>{format(new Date(date), "MMMM do, Y")}</p>
       </div>
     </div>
   );
