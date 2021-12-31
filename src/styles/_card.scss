@@ -1,4 +1,5 @@
-.gameCard {
+.game-card {
+  display: flex;
   width: 30%;
   border: 1px solid #00c2d1;
   border-radius: 25px;
@@ -7,23 +8,29 @@
   padding: 15px;
   margin-top: 3px;
   background-color: $league-blue;
-}
-
-.gameCard:hover {
-  background-color: $purple;
-  border: 1px solid $purple;
-}
-
-.gameCard:hover p {
-  color: $gold;
-}
-
-.gameTeams {
-  padding: auto;
-  text-align: center;
-}
-
-.gameDate {
-  padding: auto;
-  text-align: center;
+  &:hover {
+    background-color: $purple;
+    border: 1px solid $purple;
+  }
+  &:hover p {
+    color: $gold;
+  }
+  .teams {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    .team-name {
+      text-align: center;
+    }
+    .team-score {
+      text-align: center;
+    }
+    img {
+      max-width: 100px;
+    }
+  }
+  .game-date {
+    padding: auto;
+    text-align: center;
+  }
 }
