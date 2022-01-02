@@ -3,7 +3,19 @@ import { Link } from "react-router-dom";
 
 export default function Dropdown({dropdownName, links}) {
     const showMenu = (id) => {
-        document.getElementById(id).classList.toggle('show');
+        // if dropdown is not displaying
+        if(!document.getElementById(id).classList.contains('show')) {
+            // add class to make it display
+            document.getElementById(id).classList.add('show')
+            // add eventListener that will run hideMenu on click
+            setTimeout(() => document.querySelector('body').addEventListener('click', hideMenu), 100)
+        }
+    }
+    const hideMenu = () => {
+        // Remove show class, hiding the dropdown
+        document.getElementById(dropdownName).classList.remove('show');
+        // remove eventListener for hiding the menu on click
+        document.querySelector('body').removeEventListener('click', hideMenu)
     }
     return (
         <div className='dropdown'>
